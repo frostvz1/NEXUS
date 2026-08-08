@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080808">
+    <title>NEXUS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div>
+        <h1>NEXUS</h1>
+        <p>Central digital</p>
+    </div>
+
+    <button id="menuButton">☰</button>
+</header>
+
+<main>
+
+<section id="home" class="page active">
+
+    <div class="welcome">
+        <span>Bem-vindo ao</span>
+        <h2>NEXUS</h2>
+        <p>Sua central digital pessoal.</p>
+    </div>
+
+    <div class="cards">
+
+        <button class="card" data-page="codelab">
+            <strong>CodeLab</strong>
+            <span>Editor de código</span>
+        </button>
+
+        <button class="card" data-page="bots">
+            <strong>Bots</strong>
+            <span>Gerencie seus projetos</span>
+        </button>
+
+        <button class="card" data-page="tools">
+            <strong>Ferramentas</strong>
+            <span>Utilidades rápidas</span>
+        </button>
+
+        <button class="card" data-page="projects">
+            <strong>Projetos</strong>
+            <span>Seus projetos</span>
+        </button>
+
+        <button class="card" data-page="notes">
+            <strong>Notas</strong>
+            <span>Suas anotações</span>
+        </button>
+
+        <button class="card" data-page="settings">
+            <strong>Configurações</strong>
+            <span>Personalize o NEXUS</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="codelab" class="page">
+
+    <button class="backButton">← Voltar</button>
+
+    <h2>CodeLab</h2>
+    <p>Crie e teste seus projetos diretamente no NEXUS.</p>
+
+    <div class="projectHeader">
+
+        <input
+            id="projectName"
+            type="text"
+            placeholder="Nome do projeto..."
+            value="Meu Projeto"
+        >
+
+        <button id="saveProject" class="primaryButton">
+            Salvar
+        </button>
+
+    </div>
+
+    <div class="codeTabs">
+
+        <button class="codeTab active" data-editor="html">
+            HTML
+        </button>
+
+        <button class="codeTab" data-editor="css">
+            CSS
+        </button>
+
+        <button class="codeTab" data-editor="js">
+            JavaScript
+        </button>
+
+    </div>
+
+    <div class="editorBox">
+
+        <textarea
+            id="htmlEditor"
+            class="codeEditor active"
+            spellcheck="false"
+            placeholder="Digite seu HTML aqui..."
+        ><h1>Olá, NEXUS!</h1>
+<p>Meu primeiro projeto.</p></textarea>
+
+
+        <textarea
+            id="cssEditor"
+            class="codeEditor"
+            spellcheck="false"
+            placeholder="Digite seu CSS aqui..."
+        >body {
+    font-family: Arial;
+    text-align: center;
+    padding: 30px;
+}</textarea>
+
+
+        <textarea
+            id="jsEditor"
+            class="codeEditor"
+            spellcheck="false"
+            placeholder="Digite seu JavaScript aqui..."
+        >console.log("NEXUS funcionando!");</textarea>
+
+    </div>
+
+    <div class="editorActions">
+
+        <button id="runCode" class="primaryButton">
+            ▶ Executar
+        </button>
+
+        <button id="clearCode" class="secondaryButton">
+            Limpar
+        </button>
+
+    </div>
+
+    <div class="previewTitle">
+        <span>Preview</span>
+    </div>
+
+    <iframe
+        id="preview"
+        title="Preview do projeto"
+        sandbox="allow-scripts"
+    ></iframe>
+
+    <div class="savedProjects">
+
+        <div class="previewTitle">
+            <span>Projetos salvos</span>
+        </div>
+
+        <div id="projectList">
+            <div class="projectEmpty">
+                Nenhum projeto salvo.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="bots" class="page">
+
+    <button class="backButton">← Voltar</button>
+
+    <h2>Bot Manager</h2>
+    <p>Organize e gerencie seus bots.</p>
+
+    <div class="botCreate">
+
+        <input
+            id="botName"
+            type="text"
+            placeholder="Nome do bot..."
+        >
+
+        <input
+            id="botPlatform"
+            type="text"
+            placeholder="Plataforma (WhatsApp, Discord...)"
+        >
+
+        <input
+            id="botLanguage"
+            type="text"
+            placeholder="Linguagem (Node.js, Python...)"
+        >
+
+        <input
+            id="botPrefix"
+            type="text"
+            placeholder="Prefixo (ex: .)"
+        >
+
+        <textarea
+            id="botDescription"
+            placeholder="Descrição do bot..."
+        ></textarea>
+
+        <button id="createBot" class="primaryButton">
+            + Criar Bot
+        </button>
+
+    </div>
+
+    <div class="botListHeader">
+        <h3>Meus Bots</h3>
+        <span id="botCount">0 bots</span>
+    </div>
+
+    <div id="botList">
+
+        <div class="botEmpty">
+            Nenhum bot cadastrado.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="tools" class="page">
+
+    <button class="backButton">← Voltar</button>
+
+    <h2>Ferramentas</h2>
+    <p>Utilidades rápidas do NEXUS.</p>
+
+    <div class="toolGrid">
+
+        <button class="toolCard" data-tool="calculator">
+            <strong>Calculadora</strong>
+            <span>Faça cálculos rapidamente.</span>
+        </button>
+
+        <button class="toolCard" data-tool="password">
+            <strong>Gerador de Senhas</strong>
+            <span>Crie senhas aleatórias.</span>
+        </button>
+
+        <button class="toolCard" data-tool="counter">
+            <strong>Contador de Texto</strong>
+            <span>Conte caracteres e palavras.</span>
+        </button>
+
+        <button class="toolCard" data-tool="formatter">
+            <strong>Formatador</strong>
+            <span>Organize seu texto.</span>
+        </button>
+
+    </div>
+
+
+    <div id="toolPanel" class="toolPanel">
+
+        <div class="toolPanelHeader">
+
+            <div>
+                <h3 id="toolTitle">Ferramenta</h3>
+                <p id="toolDescription">
+                    Selecione uma ferramenta.
+                </p>
+            </div>
+
+            <button id="closeTool">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="calculatorTool" class="toolContent">
+
+            <input
+                id="calcDisplay"
+                class="toolInput"
+                type="text"
+                placeholder="Ex: 25 * 4 + 10"
+            >
+
+            <button
+                id="calculate"
+                class="primaryButton"
+            >
+                Calcular
+            </button>
+
+            <div id="calcResult" class="toolResult">
+                Resultado aparecerá aqui.
+            </div>
+
+        </div>
+
+
+        <div id="passwordTool" class="toolContent">
+
+            <div class="rangeRow">
+
+                <label>
+                    Tamanho:
+                    <strong id="passwordLengthValue">
+                        16
+                    </strong>
+                </label>
+
+                <input
+                    id="passwordLength"
+                    type="range"
+                    min="6"
+                    max="64"
+                    value="16"
+                >
+
+            </div>
+
+            <button
+                id="generatePassword"
+                class="primaryButton"
+            >
+                Gerar Senha
+            </button>
+
+            <div class="resultWithCopy">
+
+                <div
+                    id="passwordResult"
+                    class="toolResult"
+                >
+                    Clique em gerar.
+                </div>
+
+                <button
+                    class="copyButton"
+                    data-copy="passwordResult"
+                >
+                    Copiar
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="counterTool" class="toolContent">
+
+            <textarea
+                id="counterText"
+                class="toolTextarea"
+                placeholder="Digite ou cole seu texto..."
+            ></textarea>
+
+            <div class="counterStats">
+
+                <div>
+                    <strong id="charCount">0</strong>
+                    <span>Caracteres</span>
+                </div>
+
+                <div>
+                    <strong id="wordCount">0</strong>
+                    <span>Palavras</span>
+                </div>
+
+                <div>
+                    <strong id="lineCount">0</strong>
+                    <span>Linhas</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div id="formatterTool" class="toolContent">
+
+            <textarea
+                id="formatterText"
+                class="toolTextarea"
+                placeholder="Digite seu texto..."
+            ></textarea>
+
+            <div class="formatterButtons">
+
+                <button id="uppercase">
+                    MAIÚSCULAS
+                </button>
+
+                <button id="lowercase">
+                    minúsculas
+                </button>
+
+                <button id="capitalize">
+                    Primeira Letra
+                </button>
+
+                <button id="removeSpaces">
+                    Remover Espaços Extras
+                </button>
+
+            </div>
+
+            <button
+                class="copyButton"
+                data-copy="formatterText"
+            >
+                Copiar Texto
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects" class="page">
+
+    <button class="backButton">← Voltar</button>
+
+    <h2>Projetos</h2>
+    <p>Centralize seus projetos e bots.</p>
+
+    <div class="projectStats">
+
+        <div class="projectStat">
+            <strong id="totalCodeProjects">0</strong>
+            <span>CodeLab</span>
+        </div>
+
+        <div class="projectStat">
+            <strong id="totalBots">0</strong>
+            <span>Bots</span>
+        </div>
+
+        <div class="projectStat">
+            <strong id="totalProjects">0</strong>
+            <span>Total</span>
+        </div>
+
+    </div>
+
+    <div class="projectSearch">
+
+        <input
+            id="projectSearch"
+            type="text"
+            placeholder="Pesquisar projetos..."
+        >
+
+    </div>
+
+    <div class="projectSectionTitle">
+        <h3>CodeLab</h3>
+        <span id="codeProjectLabel">0 projetos</span>
+    </div>
+
+    <div id="centralCodeProjects" class="centralProjectList">
+    </div>
+
+    <div class="projectSectionTitle">
+        <h3>Bots</h3>
+        <span id="botProjectLabel">0 bots</span>
+    </div>
+
+    <div id="centralBotProjects" class="centralProjectList">
+    </div>
+
+</section>
+
+
+<section id="notes" class="page">
+
+    <button class="backButton">← Voltar</button>
+
+    <h2>Notas</h2>
+    <p>Escreva, organize e salve suas anotações.</p>
+
+    <div class="notesLayout">
+
+        <div class="notesSidebar">
+
+            <button
+                id="newNote"
+                class="primaryButton"
+            >
+                + Nova Nota
+            </button>
+
+            <input
+                id="noteSearch"
+                class="noteSearch"
+                type="text"
+                placeholder="Pesquisar notas..."
+            >
+
+            <div id="notesList"></div>
+
+        </div>
+
+
+        <div class="noteEditor">
+
+            <input
+                id="noteTitle"
+                type="text"
+                placeholder="Título da nota..."
+            >
+
+            <textarea
+                id="noteContent"
+                placeholder="Comece a escrever..."
+            ></textarea>
+
+            <div class="noteEditorFooter">
+
+                <span id="noteStatus">
+                    Nenhuma nota selecionada
+                </span>
+
+                <button
+                    id="deleteNote"
+                    class="secondaryButton"
+                >
+                    Excluir
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="settings" class="page">
+
+    <button class="backButton">← Voltar</button>
+
+    <h2>Configurações</h2>
+    <p>Personalize sua experiência no NEXUS.</p>
+
+    <div class="settingsGroup">
+
+        <h3>Aparência</h3>
+
+        <div class="settingItem">
+
+            <div>
+                <strong>Tema</strong>
+                <span>Escolha a aparência do NEXUS.</span>
+            </div>
+
+            <select id="themeSetting">
+
+                <option value="dark">
+                    Escuro
+                </option>
+
+                <option value="light">
+                    Claro
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="settingItem">
+
+            <div>
+                <strong>Cor de destaque</strong>
+                <span>Personalize a cor principal.</span>
+            </div>
+
+            <input
+                id="accentColor"
+                type="color"
+                value="#8b5cf6"
+            >
+
+        </div>
+
+    </div>
+
+
+    <div class="settingsGroup">
+
+        <h3>Personalização</h3>
+
+        <div class="settingField">
+
+            <label for="userName">
+                Seu nome
+            </label>
+
+            <input
+                id="userName"
+                type="text"
+                placeholder="Como quer ser chamado?"
+            >
+
+        </div>
+
+
+        <div class="settingField">
+
+            <label for="nexusName">
+                Nome do aplicativo
+            </label>
+
+            <input
+                id="nexusName"
+                type="text"
+                placeholder="NEXUS"
+            >
+
+        </div>
+
+        <button
+            id="saveSettings"
+            class="primaryButton"
+        >
+            Salvar configurações
+        </button>
+
+    </div>
+
+
+    <div class="settingsGroup">
+
+        <h3>Informações</h3>
+
+        <div class="infoBox">
+
+            <div>
+                <span>Aplicativo</span>
+                <strong>NEXUS</strong>
+            </div>
+
+            <div>
+                <span>Versão</span>
+                <strong>1.0.0</strong>
+            </div>
+
+            <div>
+                <span>Armazenamento</span>
+                <strong>Local</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="settingsGroup dangerGroup">
+
+        <h3>Zona de perigo</h3>
+
+        <p>
+            Isso apagará projetos, bots, notas e configurações
+            salvos neste navegador.
+        </p>
+
+        <button
+            id="clearAllData"
+            class="dangerButton"
+        >
+            Apagar todos os dados
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<nav class="bottomNav">
+
+    <button data-page="home">
+        Início
+    </button>
+
+    <button data-page="codelab">
+        CodeLab
+    </button>
+
+    <button data-page="bots">
+        Bots
+    </button>
+
+    <button data-page="tools">
+        Ferramentas
+    </button>
+
+</nav>
+
+<script src="script.js"></script>
+
+</body>
+</html>

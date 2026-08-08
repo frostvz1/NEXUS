@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080808"
+    >
+
+    <title>NEXUS — Entrar</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body class="authBody">
+
+    <main class="authContainer">
+
+        <div class="authLogo">
+            NEXUS
+        </div>
+
+        <p class="authSubtitle">
+            Sua central digital pessoal.
+        </p>
+
+
+        <!-- LOGIN -->
+
+        <section
+            id="loginForm"
+            class="authCard"
+        >
+
+            <h1>Entrar</h1>
+
+            <p>
+                Entre na sua conta NEXUS.
+            </p>
+
+
+            <label>
+                E-mail
+            </label>
+
+            <input
+                id="loginEmail"
+                type="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+            >
+
+
+            <label>
+                Senha
+            </label>
+
+            <input
+                id="loginPassword"
+                type="password"
+                placeholder="Sua senha"
+                autocomplete="current-password"
+            >
+
+
+            <button
+                id="loginButton"
+                class="authPrimary"
+            >
+                Entrar
+            </button>
+
+
+            <div
+                id="loginMessage"
+                class="authMessage"
+            ></div>
+
+
+            <button
+                id="showRegister"
+                class="authLink"
+            >
+                Criar uma conta
+            </button>
+
+        </section>
+
+
+        <!-- CADASTRO -->
+
+        <section
+            id="registerForm"
+            class="authCard hidden"
+        >
+
+            <h1>Criar conta</h1>
+
+            <p>
+                Crie sua conta para salvar seus dados.
+            </p>
+
+
+            <label>
+                Nome
+            </label>
+
+            <input
+                id="registerName"
+                type="text"
+                placeholder="Seu nome"
+                autocomplete="name"
+            >
+
+
+            <label>
+                E-mail
+            </label>
+
+            <input
+                id="registerEmail"
+                type="email"
+                placeholder="seu@email.com"
+                autocomplete="email"
+            >
+
+
+            <label>
+                Senha
+            </label>
+
+            <input
+                id="registerPassword"
+                type="password"
+                placeholder="Mínimo de 6 caracteres"
+                autocomplete="new-password"
+            >
+
+
+            <label>
+                Confirmar senha
+            </label>
+
+            <input
+                id="registerConfirm"
+                type="password"
+                placeholder="Digite a senha novamente"
+                autocomplete="new-password"
+            >
+
+
+            <button
+                id="registerButton"
+                class="authPrimary"
+            >
+                Criar conta
+            </button>
+
+
+            <div
+                id="registerMessage"
+                class="authMessage"
+            ></div>
+
+
+            <button
+                id="showLogin"
+                class="authLink"
+            >
+                Já tenho uma conta
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="config.js"></script>
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>
